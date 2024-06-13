@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Assigns arguments to variables
+FILE_RUBY=$1
+ARGUMENT=$2
+
+# Define the full path to the Ruby file
+CAMINHO_COMPLETO="./computer_science/$FILE_RUBY"
+
+# Verify if the Ruby file exists
+if [ ! -f "$CAMINHO_COMPLETO" ]; then
+  echo "Error: The file '$CAMINHO_COMPLETO' does not exist."
+  exit 1
+fi
+
+# Execute the Ruby file with the provided ARGUMENT
+ruby "$CAMINHO_COMPLETO" "$ARGUMENT"
